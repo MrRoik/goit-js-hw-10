@@ -37,7 +37,7 @@ selectBreed.addEventListener('change', event => {
 });
 
 function err() {
-  Notify.success(`Oops! Something went wrong! Try reloading the page!`, options);
+  Notify.failure(`Oops! Something went wrong! Try reloading the page!`, options);
 }
 
 const renderOptions = breeds => {
