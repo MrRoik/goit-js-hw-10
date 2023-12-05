@@ -22,19 +22,17 @@ const options = {
   cssAnimationStyle: 'zoom',
 };
 
-loaderAnime.hidden = true;
-
 selectBreed.addEventListener('change', event => {
-    loaderAnime.hidden = false;
-    container.hidden = true;
+    loaderAnime.style.display = "block";
+    container.style.display = "none";
     
   const breedId = event.target.value;
   fetchCatByBreed(breedId)
     .then(breeds => renderBreedDesc(breeds))
     .catch(error => err())
     .finally(() => {
-    loaderAnime.hidden = true;
-    container.hidden = false;
+    loaderAnime.style.display = "none";
+    container.style.display = "block";
     });
 });
 
